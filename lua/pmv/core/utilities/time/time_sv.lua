@@ -1,10 +1,10 @@
-local Utils = PMV.Utilities
 local os    = os
+local Time = PMV.Utilities.Time
 
 
---- Returns the Unix time of the beginning of the first day of the next month from the current date.
+--- Returns the Unix time of the beginning of the next month from the current date.
 -- The given Unix time will use the UTC timezone.
-function Utils.GetNextPeriod()
+function Time.GetNextPeriod()
 	local Date    = os.date("!*t")
 	local Month   = Date.month
 	local NewYear = Month == 12
@@ -23,6 +23,6 @@ function Utils.GetNextPeriod()
 end
 
 --- Returns the current Unix time using the UTC timezone.
-function Utils.GetCurrentTime()
+function Time.GetCurrent()
 	return os.time(os.date("!*t"))
 end
